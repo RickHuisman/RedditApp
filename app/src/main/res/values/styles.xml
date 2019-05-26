@@ -1,0 +1,19 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppThemeToolbar">
+        <item name="titleTextAppearance">@style/AppThemeToolbarTitleAppearance</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:elevation">2dp</item>
+    </style>
+
+    <style name="AppThemeToolbarTitleAppearance" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+</resources>
