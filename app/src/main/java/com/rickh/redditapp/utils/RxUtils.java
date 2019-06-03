@@ -1,9 +1,8 @@
 package com.rickh.redditapp.utils;
 
-import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.functions.Action1;
-import rx.schedulers.Schedulers;
+import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import timber.log.Timber;
 
 /**
@@ -17,18 +16,18 @@ public class RxUtils {
      * be called right before (or as close as possible) to the subscribe() call to ensure any other operator doesn't
      * accidentally get executed on the main thread.
      */
-    public static <T> Observable.Transformer<T, T> applySchedulers() {
-        return observable -> observable
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread());
-    }
-
-    public static <T> Action1<T> doNothing() {
-        return t -> {};
-    }
-
-    public static Action1<Throwable> logError(String errorMessage) {
-        return error -> Timber.e(error, errorMessage);
-    }
+//    public static <T> Observable.Transformer<T, T> applySchedulers() {
+//        return observable -> observable
+//                .subscribeOn(Schedulers.io())
+//                .observeOn(AndroidSchedulers.mainThread());
+//    }
+//
+//    public static <T> Action1<T> doNothing() {
+//        return t -> {};
+//    }
+//
+//    public static Action<Throwable> logError(String errorMessage) {
+//        return error -> Timber.e(error, errorMessage);
+//    }
 
 }

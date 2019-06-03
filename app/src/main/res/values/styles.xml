@@ -9,7 +9,7 @@
     <style name="AppThemeToolbar">
         <item name="titleTextAppearance">@style/AppThemeToolbarTitleAppearance</item>
         <item name="android:background">@color/colorPrimary</item>
-        <item name="android:elevation">2dp</item>
+        <item name="android:elevation">4dp</item>
     </style>
 
     <style name="AppThemeToolbarTitleAppearance" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">

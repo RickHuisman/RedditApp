@@ -33,7 +33,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
     implementation 'com.jakewharton.timber:timber:4.1.2'
-    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
 
-    implementation 'net.dean.jraw:JRAW:0.9.0'
+    implementation 'net.dean.jraw:JRAW-Android:1.1.0'
 }

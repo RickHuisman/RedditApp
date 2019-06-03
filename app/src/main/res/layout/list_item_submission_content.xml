@@ -25,6 +25,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:textSize="16sp"
+        android:textColor="#F5F5F5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/submission_thumbnail"
         app:layout_constraintTop_toTopOf="parent"
@@ -37,18 +38,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="2dp"
         android:textSize="12sp"
+        android:textColor="#757575"
         app:layout_constraintEnd_toEndOf="@+id/submission_title"
         app:layout_constraintStart_toEndOf="@id/submission_thumbnail"
         app:layout_constraintTop_toBottomOf="@+id/submission_title"
         tools:text="R/FORMULA1 • SeriousShitAt88MPH • 195 COMMENTS" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/colorPrimary"
-        android:paddingTop="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

@@ -28,7 +28,7 @@ public class SubredditAdapter extends RecyclerView.Adapter<SubredditAdapter.Subm
     public SubmissionHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         mContext = viewGroup.getContext();
 
-        View itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_submission, viewGroup, false);
+        View itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_item_submission_content, viewGroup, false);
 
         return new SubmissionHolder(itemView);
     }
@@ -44,10 +44,10 @@ public class SubredditAdapter extends RecyclerView.Adapter<SubredditAdapter.Subm
 
         submissionHolder.post_title.setText(submission.getTitle() + " " + submission.getScore());
 
-        String detail = "R/" + submission.getSubredditName().toUpperCase()
-                + " • " + submission.getAuthor()
-                + " • " + submission.getCommentCount() + " COMMENTS";
-        submissionHolder.post_detail.setText(detail);
+//        String detail = "R/" + submission.getSubredditName().toUpperCase()
+//                + " • " + submission.getAuthor()
+//                + " • " + submission.getCommentCount() + " COMMENTS";
+//        submissionHolder.post_detail.setText(detail);
     }
 
     @Override

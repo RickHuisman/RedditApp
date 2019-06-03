@@ -3,8 +3,11 @@ package com.rickh.redditapp.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import net.dean.jraw.auth.NoSuchTokenException;
-import net.dean.jraw.auth.TokenStore;
+import net.dean.jraw.models.OAuthData;
+import net.dean.jraw.oauth.TokenStore;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Simple implementation of TokenStore that uses SharedPreferences
@@ -17,27 +20,40 @@ public class AndroidTokenStore implements TokenStore {
         this.context = context;
     }
 
-    @Override
-    public boolean isStored(String key) {
-        return getSharedPreferences().contains(key);
-    }
-
-    @Override
-    public String readToken(String key) throws NoSuchTokenException {
-        String token = getSharedPreferences().getString(key, null);
-        if (token == null) {
-            throw new NoSuchTokenException("Token for key '" + key + "' does not exist");
-        }
-        return token;
-    }
-
-    @Override
-    public void writeToken(String key, String token) {
-        getSharedPreferences().edit().putString(key, token).apply();
-    }
 
     private SharedPreferences getSharedPreferences() {
         return context.getSharedPreferences(context.getPackageName() + ".reddit_token_store", Context.MODE_PRIVATE);
     }
 
+    @Override
+    public void deleteLatest(@NotNull String s) {
+
+    }
+
+    @Override
+    public void deleteRefreshToken(@NotNull String s) {
+
+    }
+
+    @Nullable
+    @Override
+    public OAuthData fetchLatest(@NotNull String s) {
+        return null;
+    }
+
+    @Nullable
+    @Override
+    public String fetchRefreshToken(@NotNull String s) {
+        return null;
+    }
+
+    @Override
+    public void storeLatest(@NotNull String s, @NotNull OAuthData oAuthData) {
+
+    }
+
+    @Override
+    public void storeRefreshToken(@NotNull String s, @NotNull String s1) {
+
+    }
 }
