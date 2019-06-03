@@ -22,14 +22,14 @@
             android:name="net.dean.jraw.android.REDIRECT_URL"
             android:value="https://github.com/mattbdean/JRAW-Android" />
 
-        <activity android:name=".MainActivity" >
+        <activity android:name=".ui.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddUserActivity" />
+        <activity android:name=".ui.AddUserActivity" />
     </application>
 
 </manifest>

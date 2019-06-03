@@ -1,4 +1,4 @@
-package com.rickh.redditapp;
+package com.rickh.redditapp.ui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,13 +6,17 @@ import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.webkit.CookieManager;
 import android.webkit.CookieSyncManager;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.rickh.redditapp.App;
+import com.rickh.redditapp.R;
 
 import net.dean.jraw.oauth.OAuthException;
 import net.dean.jraw.oauth.StatefulAuthHelper;
