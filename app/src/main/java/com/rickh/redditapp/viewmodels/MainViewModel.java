@@ -26,6 +26,16 @@ public class MainViewModel extends AndroidViewModel {
         repository = new Repository();
     }
 
+    public LiveData<Listing<Submission>> getRandomSubredditObservable() {
+        mDisposable.add(repository.getRandomSubredditObservable().subscribe(new Consumer<Listing<Submission>>() {
+            @Override
+            public void accept(Listing<Submission> submissions) {
+                ((MutableLiveData<Listing<Submission>>) mSubmissions).setValue(submissions);
+            }
+        }));
+        return mSubmissions;
+    }
+
     public LiveData<Listing<Submission>> getSubredditSubmissions(String subreddit) {
         mDisposable.add(repository.getFrontPageObservable(subreddit).subscribe(new Consumer<Listing<Submission>>() {
             @Override

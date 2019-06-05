@@ -22,8 +22,6 @@ public final class App extends Application {
     public void onCreate() {
         super.onCreate();
 
-        System.out.println("Foobar");
-
         // Get UserAgent and OAuth2 data from AndroidManifest.xml
         AppInfoProvider provider = new ManifestAppInfoProvider(getApplicationContext());
 

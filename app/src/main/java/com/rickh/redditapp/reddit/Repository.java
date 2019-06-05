@@ -23,6 +23,13 @@ public class Repository {
         mRedditClient = App.getAccountHelper().switchToUser("rickhuis");
     }
 
+    public Observable<Listing<Submission>> getRandomSubredditObservable() {
+        return Observable.fromCallable(() -> true)
+                .flatMap(__ -> just(mRedditClient.randomSubreddit().posts().build().next()))
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
     public Observable<Listing<Submission>> getFrontPageObservable(String subreddit) {
         return Observable.fromCallable(() -> true)
                 .flatMap(__ -> just(subredditPaginator(subreddit).build().next()))
