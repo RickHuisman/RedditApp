@@ -40,13 +40,13 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(findViewById(R.id.toolbar));
         getSupportActionBar().setTitle("Frontpage");
 
-        Button loginButton = findViewById(R.id.login);
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, AddUserActivity.class));
-            }
-        });
+//        Button loginButton = findViewById(R.id.login);
+//        loginButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(MainActivity.this, AddUserActivity.class));
+//            }
+//        });
 
         mSubredditPostList = findViewById(R.id.subreddit_post_list);
         mSubredditPostList.setHasFixedSize(true);
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new SubredditAdapter();
         mSubredditPostList.setAdapter(mAdapter);
 
-        mMainViewModel.getSubredditSubmissions("Formula1").observe(this, new Observer<Listing<Submission>>() {
+        mMainViewModel.getSubredditSubmissions("Soccer").observe(this, new Observer<Listing<Submission>>() {
             @Override
             public void onChanged(Listing<Submission> submissions) {
                 mAdapter.setSubmissions(new ArrayList<>(submissions));

@@ -1,47 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="?android:selectableItemBackground"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:elevation="2dp"
     android:clickable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:paddingTop="12dp"
     android:focusable="true">
 
-    <ImageView
-        android:id="@+id/submission_thumbnail"
-        android:layout_width="52dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/submission_title"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:textSize="16sp"
-        android:textColor="#F5F5F5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/submission_thumbnail"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Title" />
+        <TextView
+            android:id="@+id/submission_item_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="24dp"
+            android:lineSpacingExtra="2dp"
+            android:textColor="#F5F5F5"
+            android:textIsSelectable="false"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/submission_item_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginEnd="16sp"
+            tools:ignore="RtlHardcoded"
+            tools:text="Title" />
 
-    <TextView
-        android:id="@+id/submission_detail"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="2dp"
-        android:textSize="12sp"
-        android:textColor="#757575"
-        app:layout_constraintEnd_toEndOf="@+id/submission_title"
-        app:layout_constraintStart_toEndOf="@id/submission_thumbnail"
-        app:layout_constraintTop_toBottomOf="@+id/submission_title"
-        tools:text="R/FORMULA1 • SeriousShitAt88MPH • 195 COMMENTS" />
+        <TextView
+            android:id="@+id/submission_item_byline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="#757575"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/submission_item_title"
+            app:layout_constraintStart_toStartOf="@+id/submission_item_title"
+            app:layout_constraintTop_toBottomOf="@+id/submission_item_title"
+            app:layout_constraintVertical_bias="0"
+            tools:text="/r/TodayILearned \u00b7 Saketme \u00b7 43 comments" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/submission_item_icon"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            tools:ignore="ContentDescription"
+            tools:scaleType="centerInside" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/submission_item_separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#333333"/>
+</LinearLayout>

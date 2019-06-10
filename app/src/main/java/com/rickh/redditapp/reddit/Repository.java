@@ -40,7 +40,6 @@ public class Repository {
     private DefaultPaginator.Builder<Submission, SubredditSort> subredditPaginator(String subreddit) {
         return mRedditClient.subreddit(subreddit)
                 .posts()
-                .sorting(SubredditSort.TOP)
-                .timePeriod(TimePeriod.YEAR);
+                .sorting(SubredditSort.BEST);
     }
 }
